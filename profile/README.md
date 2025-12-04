@@ -1,104 +1,125 @@
-🔐 Tutorial: Installazione Git + Configurazione SSH
+# 🔐 Tutorial: Installazione di Git + Configurazione SSH
 
-Se non sai come installare Git o configurare SSH, segui questa guida semplice.
+Se non sai come installare Git o configurare SSH, segui questa guida semplice e ordinata.
 
-💻 1. INSTALLAZIONE DI GIT
-🪟 Windows
+---
+
+## 💻 1. Installazione di Git
+
+### 🪟 Windows
 
 Apri PowerShell e scrivi:
 
+```bash
 winget install --id Git.Git -e --source winget
-
+```
 
 Chiudi e riapri PowerShell, poi verifica l’installazione:
 
+```bash
 git --version
+```
 
+Se ottieni qualcosa tipo:
 
-Se vedi qualcosa tipo:
-
+```
 git version 2.xx.x
+```
 
+Allora Git è installato correttamente.
 
-Git è installato correttamente.
+---
 
-🐧 Linux (Ubuntu / Debian / Kali / Mint)
+### 🐧 Linux (Ubuntu / Debian / Kali / Mint)
 
 Apri Bash e scrivi:
 
+```bash
 sudo apt update
 sudo apt install git
-
+```
 
 Verifica:
 
+```bash
 git --version
+```
 
-⚙️ 2. COMANDI BASE DI GIT
-📥 Per scaricare una repository (clone)
+---
+
+## ⚙️ 2. Comandi base di Git
+
+### 📥 Clonare una repository
+
+```bash
 git clone git@github.com:ITS-Cyber-security-2025-2026/nomerepo.git
+```
 
-📤 Per inviare modifiche su GitHub
+### 📤 Inviare modifiche su GitHub
 
-Dentro la cartella della repo:
+All’interno della cartella della repo:
 
+```bash
 git add .
-
-
+```
 ✔️ Aggiunge tutti i file modificati alla staging area
 
+```bash
 git commit -m "descrizione della modifica"
-
-
+```
 ✔️ Crea un commit con un messaggio
 
+```bash
 git push
+```
+✔️ Invia le modifiche su GitHub
 
+---
 
-✔️ Invii le modifiche su GitHub
+## 🔑 3. Setup della chiave SSH
 
-🔑 3. SETUP DELLA CHIAVE SSH
-🧪 Genera la chiave SSH
+### 🧪 Generare la chiave SSH
 
 Apri PowerShell e scrivi:
 
+```bash
 ssh-keygen -t ed25519 -C "la.mail@che.usisugit.com"
-
+```
 
 Quando appare:
 
+```
 Enter a file in which to save the key:
-
+```
 
 Premi INVIO senza modificare nulla.
 
-📄 Visualizza la chiave pubblica
+---
+
+### 📄 Visualizzare la chiave pubblica
+
+```bash
 cat ~/.ssh/id_ed25519.pub
+```
 
+Copia tutto il testo mostrato: è la tua chiave SSH pubblica.
 
-Il testo mostrato è la tua chiave SSH pubblica.
-Copiala completamente.
+---
 
-🔗 Aggiungi la chiave al tuo account GitHub
+### 🔗 Aggiungere la chiave al tuo account GitHub
 
-Vai su GitHub (browser)
+1. Vai su GitHub dal browser  
+2. Clicca sul tuo profilo (in alto a destra)  
+3. *Settings*  
+4. *SSH and GPG keys*  
+5. *New SSH key*  
+6. Incolla la chiave  
+7. Lascia selezionato: **Authentication Key**  
+8. Dai un nome alla chiave (es. “PC personale”)  
+9. Salva
 
-Clicca in alto a destra sul tuo profilo
+---
 
-Settings
+## 🎉 Tutto fatto!
 
-SSH and GPG keys
-
-New SSH key
-
-Incolla la chiave copiata
-
-Lascia Authentication Key
-
-Dai un nome (es. “PC personale”)
-
-Salva
-
-🎉 Tutto fatto!
-
-Ora puoi usare Git senza password e lavorare con tutte le repository dell’organizzazione.
+Ora puoi usare Git senza inserire password e lavorare con tutte le repository dell’organizzazione.
